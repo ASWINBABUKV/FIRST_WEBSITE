@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>PERSONAL WEBSITE</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="mywebstyle.css">
+  
+    <script>
+function setCookie(cname,cvalue,exdays) {
+  const d = new Date();
+  d.setTime(d.getTime() + (exdays*24*60*60*1000));
+  let expires = "expires=" + d.toGMTString();
+  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
+
+function getCookie(cname) {
+  let name = cname + "=";
+  let decodedCookie = decodeURIComponent(document.cookie);
+  let ca = decodedCookie.split(';');
+  for(let i = 0; i < ca.length; i++) {
+    let c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
+}
+
+function checkCookie() {
+  let user = getCookie("username");
+  if (user != "") {
+    alert("Welcome again " + user);
+  } else {
+     user = prompt("Please enter your name:","");
+     if (user != "" && user != null) {
+       setCookie("username", user, 7);
+     }
+  }
+}
+</script>
+
+</head>
+<body onload="checkCookie()">
+
+
+<nav class="navbar navbar-inverse ">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#">ASWIN'S WEBSITE</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li><a class="active" href="#home"><span class="glyphicon glyphicon-home"></span> Home </a></li>
+        <li><a href="#PERSONAL DATA"><span class="glyphicon glyphicon-tasks"></span> Personal Data</a></li>
+		<li><a href="#SKILLS"><span class="glyphicon glyphicon-king"></span> Skills</a></li>
+		<li><a href="#EDUCATION"><span class="glyphicon glyphicon-education"></span> Education</a></li>
+		<li><a href="#ACHIEVEMENTS"><span class="glyphicon glyphicon-tower"></span> Achievements</a></li>
+		<li><a href="#CONTACT"><span class="glyphicon glyphicon-earphone"></span> Contact</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#REGISTRATION FORM"><span class="glyphicon glyphicon-list-alt"></span> FORM</a></li>
+        <li><a href="#GAME"><span class="glyphicon glyphicon-play-circle"></span> GAME</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+
+<div class="container">
+ <div class="p-5 text-center background-mount container-fluid" id="Home">
+            <img id="aaas"src = "imageaa.jpg" class="img-circle" id="photo"> 
+            <h1 >ASWIN BABU K V</h3>
+            <h4 id="banner-icon"><i class="fas fa-briefcase mr-2" id="banner-icon"></i><span class="glyphicon glyphicon-tag"></span> Software Developer</h4>
+            <h4 id="banner-icon"><i class="fas fa-home" id="banner-icon"></i><span class="glyphicon glyphicon-map-marker"></span> Kerala, India</h4>
+    </div>
+ 
+	<h3><a id="PERSONAL DATA"><img src = "data:image/png;base64,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" style="width:35px;height:30px;position: relative;left: 1px";></a>PERSONAL DATA</h3>
+	<table id="data" class="table table-hover">
+	<tbody>
+	<tr>
+    <td>NAME :</td>
+    <td>ASWIN BABU K V</td>
+	</tr>
+    <tr>
+    <td>ADDRESS:</td>
+    <td>KV NIVAS KOTTILA, EZHOME, KANNUR, KERALA</td>
+	</tr>
+    <tr>
+    <td>DATE OF BIRTH :</td>
+    <td>11-01-2003</td>
+	</tr>
+	<tr>
+    <td>FATHERS NAME:</td>
+    <td>BABU M</td>
+    </tr>
+    <tr>
+	<td>NATIONALITY : </td>
+	<TD>INDIAN</TD> 
+	</tr>
+	</tbody>
+	</table>
+	<h3><a id="SKILLS"><img src = "https://www.nicepng.com/png/detail/430-4308628_cascadia-international-womens-film-festival-knowledge-skill-icon.png" style="width:60px;height:40px;position: relative;left: 1px;vertical-align:middle;"></a>SKILLS</h3>
+    <div class="box" style="background-color: #F0FFFF">
+    <p>1. C++ programming</p>
+    <p>2. Python programming</p>
+    <p>3. Web designing</p>
+    <p>4. My Sql</p>
+    </div>
+	<br>
+	<h3><a id="EDUCATION"><img src = "https://www.clipartmax.com/png/middle/215-2150413_hat-clipart-phd-rock-band-guitar-icon.png" style="width:50px;height:30px;position: relative;left: 1px;vertical-align:middle;"></a>EDUCATION</h3>
+
+	<table id="data" class="table table-hover">
+	<tr>
+    <th>QUALIFICATION</th>
+    <th>NAME OF INSTITUTE</th>
+    <th>BOARD</th> 
+    <th>YEAR</th>
+    <th>PERCENTAGE</th>
+	</tr>
+	<tr>
+    <td>10</td>
+    <td>JAWAHAR NAVODAYA VIDYALAYA, MAHE</td>
+    <td>CBSE</td>
+    <td>2017-18</td>
+    <td>91.4%</td>
+	</tr>
+	<tr>
+    <td>12</td>
+    <td>JAWAHAR NAVODAYA VIDYALAYA, MAHE</td>
+    <td>CBSE</td>
+    <td>2019-20</td>
+    <td>93%</td>
+	</tr>
+    </table>
+
+	<br />
+	<h3><a id="ACHIEVEMENTS"><img src = " https://www.kindpng.com/picc/m/104-1049524_award-clipart-achievement-achievement-clipart-hd-png-download.png" style="width:60px;height:30px;position: relative;left: 1px;vertical-align:middle;"></a>ACHIEVEMENTS</h3>
+	<div class="box" style="background-color:#F0FFFF">
+    <p>1. Won Rajyapuraskar in Scout and Guides</p>
+    <p>2. Participated in Regional Level Cricket Competition</p>
+    <p>3. Completed academics with a distinction</p>
+    </div>
+  	
+	<h3><a id="CONTACT"><img src = "https://www.pinclipart.com/picdir/middle/451-4513778_contact-us-icon-png-clipart.png"  style="width:40px;height:30px;position: relative;left:1px;vertical-align:middle;"></a>  CONTACT</h3>
+	<div class="box" style="background-color:#F0FFFF">
+	<p><img src="https://www.nicepng.com/png/detail/1-11753_telephone-clipart-white-transparent-background-collection-phone-clip.png" style="width:50px;height:30px;position: relative;left: 1px;vertical-align:middle;"></a>8547900975</p>
+	<p><img src="https://www.pngitem.com/pimgs/m/511-5119827_email-clipart-email-address-e-mail-clip-art.png" style="width:50px;height:30px;position: relative;left: 1px;vertical-align:middle;"></a>aswinbabkukv11@gmail.com</p>
+	<p><a href="https://twitter.com/ASWINBABUKV1?s=08"><img src="https://help.twitter.com/content/dam/help-twitter/brand/logo.png" style="width:50px;height:30px;position: relative;left: 1px;vertical-align:middle;"></a>ASWINBABUKV1</p>
+	<p><img src="https://i.pinimg.com/474x/fc/c5/77/fcc57757270fbcacb3ec70a4ec384d26.jpg" style="width:50px;height:30px;position: relative;left: 1px;vertical-align:middle;"></a>KV NIVAS KOTTILA, EZHOME, KANNUR, KERALA</p>
+	</div>
+	<BR>
+
+	<h3><a id="REGISTRATION FORM"></a><span class="glyphicon glyphicon-list-alt"></span>REGISTRATION FORM</h3>
+
+	<div >
+		<a id ="a" href="registration_form.html"><img src= "https://static.vecteezy.com/system/resources/previews/002/290/642/non_2x/register-now-icon-or-logo-badge-template-3d-modern-with-warning-mark-in-yellow-color-illustation-vector.jpg" style="width:100px;height:100px;"></a>
+	</div>
+
+
+	<div>
+		<h3><a id="GAME"></a><span class="glyphicon glyphicon-play"></span> GAME</h3>
+	</div>
+	<div >
+		<a id ="a" href="Aswin'sgmae.html"><img src= "https://thumbs.dreamstime.com/b/play-now-button-click-red-182469528.jpg" style="width:100px;height:100px;"></a>
+	</div>
+</div>
+</body>
+</html>
+

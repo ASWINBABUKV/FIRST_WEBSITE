@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+    <title>Number Guessing Game</title>
+    <style>
+        html {
+            font-family: sans-serif;
+        }
+        
+        body {
+          background-image: url("https://media.tenor.com/images/6ceac11cc40be179736d479bac2da403/tenor.gif");
+        }
+        input[type=number] {
+
+	<!--	padding: 12px 20px;
+		margin: 8px 0;
+		box-sizing: border-box;
+		border: 2px solid red;
+		border-radius: 4px;
+		}
+-->
+		input[type=number]:focus {
+		border: 2px  red;
+		background-color: ivory;
+		}
+        #container {
+           background-image: url("https://cdn.pixabay.com/photo/2015/09/13/02/30/gold-937640_1280.jpg");
+            border: 5px solid #F5E4C3;
+            height: 520px;
+            width: 600px;
+            text-align: center;
+            /*Also you forgot a hyphen in between the text and align*/
+        }
+        #heading{
+			text-shadow: 2px 1px 1px DodgerBlue;
+			 font-size: 30px;
+			 font-family: "Times New Roman", Times, serif;
+			}
+			#initialInstr, #ShowInstr,#output, #outputp, #outputpp{
+				font-size: 20px;
+				}
+			
+		</style>
+</head>
+
+<body>
+	<center>
+    <div class="container">
+        <img src="https://raw.githubusercontent.com/thiagodnf/guess-the-number/master/img/logo.png?token=AAG9XwrL-t72tifQ-eA47lewNBqqV9Nwks5cDnuJwA%3D%3D" style="width:450px;height:170px;margin-right:15px;">
+        <div id="container">
+            <p id="heading"><B>NUMBER GAME</B></p>
+            <p id="initialInstr">Click Play to Begin</p>
+            <p id="ShowInstr" hidden>Guess the number between 1 and 20!!</p>
+            <div class="form-group">
+                <div>
+                    <label  for="inputValue">Enter your guess: </label>
+                    <input id="inputValue" class="form-control form-control-lg" type="number" placeholder="Enter your guess!!">
+                </div>
+                <br>
+                <div>
+                    <button type="button" id="PlayAgain" class="btn btn-lg btn-secondary" onclick="GuessGame()">Play</button>
+                    <button type="button" id="submitguess" class="btn btn-lg btn-secondary">Check Guess</button>
+                    
+                </div>
+                <br>
+                <div>
+                    <p id="output"></p>
+
+                </div>
+                <br>
+                <div>
+                    <p id="outputp"></p>
+                </div>
+                <div>
+                    <p id="outputpp"></p>
+                </div>
+            </div>
+
+
+            <script type="text/javascript">
+                function GuessGame() {
+                    var guesscount = 0;
+                    document.getElementById("initialInstr").hidden = true; 
+                    document.getElementById("ShowInstr").hidden = false;
+                    let btn = document.getElementById('submitguess');
+                    let output = document.getElementById('output'); 
+                    let outputp = document.getElementById('outputp'); 
+                    let outputpp = document.getElementById('outputpp'); 
+            
+                    let randomNumber = Math.floor(Math.random() * 20) + 1;
+                    console.log(randomNumber); //to see the no in console in Inspect Element
+                    output.hidden = true; 
+                    outputp.hidden = true; 
+                    outputpp.hidden = true;
+                    btn.addEventListener('click', function() {
+
+                        output.hidden = false; 
+                    	
+                        let input = document.getElementById('inputValue').value;
+                        
+                        guesscount += 1;
+                        if (input==''){
+							output.innerHTML = '<div class="alert alert-info">Please enter a valid number</div>';
+						}
+						else if (input < 1) {
+						 output.innerHTML = '<div class="alert alert-danger">Please enter a number greater than 1!</div>';
+						}
+                        else if (input == randomNumber) { 
+                            output.innerHTML = '<div class="alert alert-success">CONGRATULATIONS , YOU GUESSED RIGHT!<br>Click Play to try again</div>';
+                            displayGuesses(input);
+
+                            displayGuesscount(guesscount)
+                        } else if (input > randomNumber) {
+                            output.innerHTML = '<div class="alert alert-warning">TRY A SMALLER NUMBER!!</div>';
+                            displayGuesses(input);
+                        } else if (input < randomNumber) {
+                            output.innerHTML = '<div class="alert alert-warning">TRY A GREATER NUMBER!!</div>';
+                            displayGuesses(input);
+                        }
+ 
+
+                    })
+
+                }
+
+                function displayGuesses(input) {
+                    let outputp = document.getElementById('outputp');
+                    outputp.hidden = false; 
+                    outputp.innerHTML = "YOUR GUESS WAS : " + input;
+
+                }
+
+                function displayGuesscount(guesscount) {
+                    let outputpp = document.getElementById('outputpp');
+                    outputpp.hidden = false; 
+                    outputpp.innerHTML = "Number of guesses made : " + guesscount;
+
+                }
+            </script>
+        </div>
+</center>
+</body>
+
+</html>

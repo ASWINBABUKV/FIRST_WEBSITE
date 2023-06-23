@@ -1,0 +1,74 @@
+body 
+	{
+		background-image: url("https://i.dlpng.com/static/png/5438977-best-wedding-backgrounds-illustrations-royalty-free-vector-wedding-backgrounds-612_548_preview.png");
+	}
+	table,th,td
+	{
+	border: 0.5px solid #ddd;
+	border-collapse: collapse;
+	padding: 5px;
+	position: relative;
+    left: 30px;
+	}
+	th 
+	{
+	background-color: lightgreen;
+	}
+	tr:nth-child(even){background-color: #F0FFFF}
+	tr:nth-child(odd){background-color: #F0FFFF}
+	h3
+	{
+	text-decoration: underline;
+	}
+	p
+	{
+	font-size: 17px;
+	}
+
+	* {
+	box-sizing: border-box;
+	}
+
+	.box {
+	position: relative;
+	left: 55px;
+	width: 70%;
+	padding: 15px;
+	}
+	ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+
+	}
+
+	li:last-child {
+	border-right: none;
+	}
+	li a {
+	display: block;
+	color: white;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+	}
+
+
+	#a:link, a:visited {
+	background-color:#FF7F50;
+	color: white;
+	padding: 2px 2px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	margin-left:50px;
+	}
+
+	#a:hover {
+	background-color: BLUE;
+	}
+	h1{
+	text-shadow: 2px 1px 1px HOTPINK;
+	Letter-spacing: 1px;
+	}

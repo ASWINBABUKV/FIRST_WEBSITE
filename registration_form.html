@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>REGISTRATION FORM</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="formstyle.css">
+  <script>
+	function validate()
+	{
+	name=document.getElementById("name").value;
+	mobile=document.getElementById("mb").value;
+	address=document.getElementById("Address").value;
+	city=document.getElementById("City").value;
+	state=document.getElementById("State").value;
+	pin=document.getElementById("pin").value;
+	email=document.getElementById("Email").value;
+	country=document.getElementById("Country").value;
+	achiev = document.getElementById("comment").value;
+	b = document.getElementById("b1").value;
+	p = document.getElementById("p1").value;
+	y = document.getElementById("y1").value;
+	if(name==""||mobile==""||address==""||city==""||state==""||pin==""||email==""||country==""||achiev==""||y==""||b==""||p=="")
+	{
+		alert("Please fill all fields!");
+		return false;
+	}
+	
+	else if(!name.match(/^[A-Za-z]+$/))
+	{
+		alert("Name should contain only alphabets!")
+		return false;
+	
+	}
+	else if(name.length<3)
+	{
+		alert("Please enter a proper name!")
+		return false;
+	}
+	else if(email.indexOf("@") == -1 || email.length < 6){
+    alert("Please Enter valid Email!");
+    return false;
+  }
+	else if(!mobile.match(/^\d{10}$/))
+	{
+		alert("Please Enter a valid Mobile!")
+		return false;
+	}
+	else if(address.length<10)
+	{
+		alert("Please Enter proper address!")
+		return false;
+	}
+	else if(country.length<3)
+	{
+		alert("Please Enter proper name of country!")
+		return false;
+	}
+	else if(!country.match(/^[A-Za-z]+$/))
+	{
+		alert("Country name should contain only alphabets!")
+		return false;
+	
+	}
+	else if(!state.match(/^[A-Za-z]+$/))
+	{
+		alert("State name should contain only alphabets!")
+		return false;
+	
+	}
+	else if(!pin.match(/^\d{6}$/))
+	{
+		alert("Pin number Not valid")
+		return false;
+	}
+	else if(!y.match(/^\d{4}$/))
+	{
+		alert("Year of passing Not valid")
+		return false;
+	}
+
+	}
+function Pin() {
+            var city = document.getElementById("City").value;
+            var pincode = document.getElementById("pin");
+            if (city == "Kasargod") {
+                pincode.value = 671121;
+
+            } else if (city == "Kannur") {
+                pincode.value = 670001;
+            } else if (city == "Kozhikode") {
+                pincode.value = 673001;
+            }
+            else if (city == "Kollam") {
+                pincode.value = 601021;
+            }
+            else if (city == "Kottayam") {
+                pincode.value = 686001;
+            }
+            else if (city == "Malappuram") {
+                pincode.value = 676504;
+            }
+            else if (city == "Ernakulam") {
+                pincode.value = 682011;
+            }
+            else if (city == "Thrissur") {
+                pincode.value = 620680;
+            }
+            else if (city == "Alappuzha") {
+                pincode.value = 688001;
+            }
+            else if (city == "Thiruvananthapuram") {
+                pincode.value = 605036;
+            }
+            else if (city == "Pathanamthitta") {
+                pincode.value = 689645;
+            }
+            else if (city == "Wayanad") {
+                pincode.value = 673593;
+            }
+            else if (city == "Palakkad") {
+                pincode.value = 678001;
+            }
+            else if (city == "Idukki") {
+                pincode.value = 685602;
+            }
+        }
+function printPage() {
+  window.print();
+}
+setInterval(myTimer, 1000);
+function myTimer() {
+  const d = new Date();
+  document.getElementById("time").innerHTML = d.toLocaleTimeString();
+}
+window.onload = function() {
+    var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+    var date = new Date();
+
+    document.getElementById("datep").innerHTML = months[date.getMonth()] + ' ' + date.getDate() + ' '+ date.getFullYear();
+}
+</script>
+</head>
+<body>
+
+<div class="container">
+    <div class="col-md-2"></div>
+    <div class="col-md-8" id="form">
+		<form id="myForm" action="m.html" method="post" >
+		<h1>Registration Form </h1>
+		<p class="text-right" id="datep"></p>
+		<p class="text-right" id="time"></p>
+		
+
+
+  
+		<div class="form-group col-md-6">
+		<label for="inputfirstname">Firstname</label>
+		<input type="text" class="form-control" id="name" placeholder="Firstname" >
+		</div>
+		<div class="form-group col-md-6">
+		<label for="inputLastname">Lastname</label>
+		<input type="text" class="form-control" id="name" placeholder="Lastname" >
+		</div>
+		<div class="form-group col-md-6">
+		<label for="date">Date of Birth</label>
+		<input type="date" class="form-control" id="date" placeholder="Date" required>
+		</div>
+		<div class="form-group col-md-6">
+		<label for="inputEmail">Email</label>
+		<input type="email" class="form-control" id="Email">
+		</div>
+		<div class="form-group row col-md-12">
+		<label for="contact" class="col-sm-2 col-form-label" >Contact</label>
+		<div class="col-sm-5">
+		<input type="text"  class="form-control" id="mb" placeholder="10 digits number" >
+		</div>
+		</div>
+		<div class="form-group row col-md-12">
+		<label for="Gender" class="col-sm-2 col-form-label" required>Gender</label>
+		<label class="radio-inline"><input type="radio" name="optradio">MALE</label>
+		<label class="radio-inline"><input type="radio" name="optradio">FEMALE</label>
+		<label class="radio-inline"><input type="radio" name="optradio">PREFER NOT TO SAY</label>
+		</div>
+		<div class="form-group row col-md-12">
+		<label for="image" class="col-sm-2 col--form-control-file">Photo</label>
+		<input type="file" class="form-control-file" id="image" required>
+		</div>
+		<div class="form-group row col-md-12">
+		<label for="Address" class="col-sm-2 col-form-label">Address</label>
+		<div class="col-sm-10">
+		<input type="text" class="form-control" id="Address" placeholder="Address">
+		</div>
+		</div>
+		
+		<div class="form-group row col-md-12">
+		<label for="Country" class="col-sm-2 col-form-label">Country</label>
+		<div class="col-sm-5">
+		<input type="text" class="form-control" id="Country" placeholder="Country">
+		</div>
+		</div>
+		<div class="form-group row col-md-12">
+		<label for="State" class="col-sm-2 col-form-label">State</label>
+		<div class="col-sm-5">
+		<input type="text" class="form-control" id="State" placeholder="State">
+		</div>
+		</div>
+		<div class="form-group row col-md-12">
+		<label for="City" class="col-sm-2 col-form-label">City</label>
+		<div class="col-sm-5">
+		<input type="text" class="form-control" id="City" placeholder="City">
+		</div>
+		</div>
+		<div class="form-group row col-md-12">
+		<label for="pincode" class="col-sm-2 col-form-label">Pincode</label>
+		<div class="col-sm-5">
+		<input type="text"  class="form-control" id="pin" onblur="Pin()"placeholder="Pin" >
+		</div>
+		</div>
+		<div class="form-group row col-md-12">
+		<label for="Qualification" class="col-sm-2 col-form-label">Qualification</label>
+		<div class="col-sm-10">
+		<table id="qualification" class="table">
+		<thead>
+		<tr>
+		<th scope="col">Exam</th>
+		<th scope="col">Board</th>
+		<th scope="col">Percentage</th>
+		<th scope="col">Year of Passing</th>
+		</tr>
+		</thead>
+		<tbody>
+		<tr>
+		<th scope="row">Class X</th>
+		<td><input type="text" id="b1" class="form-control" placeholder="Board" ></td>
+		<td><input type="text" id="p1" class="form-control" placeholder="Percentage" ></td>
+		<td><input type="text" id="y1" class="form-control" placeholder="Year of passing" ></td>
+		</tr>
+		<tr>
+      <th scope="row">Class XII</th>
+      <td><input type="text" id="b1"class="form-control" placeholder="Board" ></td>
+		<td><input type="text" class="form-control" placeholder="Percentage" ></td>
+		<td><input type="text" class="form-control" placeholder="Year of passing" ></td>
+		</tr>
+		</tbody>
+		</table>
+	</div>
+	</div>
+		<div class="form-group row col-md-12">
+		<label for="Hobbies" class="col-sm-2 col-form-label">Hobbies</label>
+		<label class="checkbox-inline"><input type="checkbox" >Drawing</label>
+		<label class="checkbox-inline"><input type="checkbox" >Dancing</label>
+		<label class="checkbox-inline"><input type="checkbox" >Gardening</label>
+		<label class="checkbox-inline"><input type="checkbox" ><input type="text" class="form-control"  placeholder="Others"></label>
+		</div>
+		<div class="form-group row col-md-12">
+		<label for="Skills" class="col-sm-2 col-form-label">Skills</label>
+		<label class="checkbox-inline"><input type="checkbox" >Web devoloping</label>
+		<label class="checkbox-inline"><input type="checkbox" >C++</label>
+		<label class="checkbox-inline"><input type="checkbox" >Python</label><br>
+		<label class="checkbox-inline"><input type="checkbox" ><input type="text" class="form-control" placeholder="Others"></label>
+		</div>
+		<div class="form-group row col-md-12">
+		<label for="Achivements" class="col-sm-2 col-form-label">Achievenments:</label>
+		<textarea class="form-control" rows="5" id="comment" placeholder="Achievements"></textarea>
+		</div>
+		<div class="form-group row col-md-12">
+		<input type="button" value="Print this page" onclick="printPage()" >
+		<input type="submit" value="Submit" onClick="return validate()" >
+		
+		</div>
+ </form>
+ 
+ </div>
+</div>
+
+</body>
+</html>
+
